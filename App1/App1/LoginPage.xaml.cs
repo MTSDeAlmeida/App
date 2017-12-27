@@ -33,6 +33,7 @@ namespace App1
             {
                 //EntrySenha.Text = string.Empty;
                // EntryLogin.Text = string.Empty;
+
                 await Navigation.PushAsync(new App1.MastePage() { Title = "#CLASS"});
             }
         }
