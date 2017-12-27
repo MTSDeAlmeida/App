@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Views.Cadastros.CadastroAlunoView"
+             Title="Cadastro de Aluno">
+    <ScrollView>
+        <StackLayout
+                  Margin="10,10,10,50"
+                  VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Label Text="Nome:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <Entry x:Name="EntryNome"
+                       VerticalOptions="FillAndExpand"                     
+                       FontSize="Small"
+                       BackgroundColor="White"
+                       TextColor="#2c3e50"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Data Nascimento:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <DatePicker
+                       x:Name="dpDataNascimento"
+                       VerticalOptions="CenterAndExpand"                       
+                       MinimumDate="01/01/1970" 
+                       MaximumDate="01/01/2100"
+                       Format="dd/MM/yyyy"
+                       BackgroundColor="White"
+                       TextColor="#2c3e50"/>
+
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Idade:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <Entry x:Name="EntryIdade"
+                       VerticalOptions="FillAndExpand"
+                       Keyboard="Numeric"                      
+                       FontSize="Small"
+                       BackgroundColor="White"
+                       TextColor="#2c3e50"/>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Sexo:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <Picker Title="Selecione..."
+                 VerticalOptions="FillAndExpand"
+                 x:Name="picSexo"
+                 TextColor="#2c3e50"
+                 BackgroundColor="White">
+                    <Picker.Items>
+                        <x:String>Masculino</x:String>
+                        <x:String>Feminino</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Fone:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <Entry x:Name="EntryFone"
+                       VerticalOptions="FillAndExpand" 
+                       Keyboard="Telephone"                      
+                       FontSize="Small"
+                       BackgroundColor="White"
+                       TextColor="#2c3e50"/>
+            </StackLayout>            
+            <StackLayout>
+                <Label Text="Email:"
+                   Font="20dp"
+                   VerticalOptions="FillAndExpand"/>
+                <Entry  x:Name="EntryEmail"
+                    VerticalOptions="FillAndExpand"
+                    FontSize="Small"
+                    BackgroundColor="White"
+                    TextColor="#2c3e50"
+                    Keyboard="Email"/>
+            </StackLayout>
+            <StackLayout  VerticalOptions="FillAndExpand"
+                          Padding="20,20,20,20">
+                <Button                
+                Text="Salvar"
+                TextColor="#2c3e50"
+                BackgroundColor="White" 
+                BorderColor="#2c3e50" 
+                BorderWidth="1" 
+                BorderRadius = "20"   
+                FontSize="Small"
+                Clicked="BtnSalvar_Clicked"
+                HeightRequest="40"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

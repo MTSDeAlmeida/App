@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App1.LoginPage"
+             Title="#CLASS"
+             Padding="10,20,10,50">
+    <StackLayout
+            Margin="10,10,10,50"
+            VerticalOptions="Start">
+        <StackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center">
+            <controls:CircleImage  Source="logo_escola.png" Aspect="AspectFill">
+                <controls:CircleImage.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">80</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.WidthRequest>
+                <controls:CircleImage.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">80</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.HeightRequest>
+            </controls:CircleImage>
+        </StackLayout>
+        <StackLayout>
+            <Label 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="Start"
+                    Text="Login:"
+                    Font="20dp"/>
+            <Entry 
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    Placeholder="Digite seu login"
+                    x:Name="EntryLogin"
+                    BackgroundColor="White"
+                    TextColor="#2c3e50"
+                    FontSize="Small"/>
+        </StackLayout>
+        <StackLayout>
+            <Label 
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Senha:"
+                    Font="20dp"/>
+            <Entry
+                    VerticalOptions="Start"
+                    x:Name="EntrySenha"
+                    Placeholder="Digite sua senha"
+                    IsPassword="True"    
+                    BackgroundColor="White"
+                    TextColor="#2c3e50"
+                    FontSize="Small"/>
+        </StackLayout>
+        <StackLayout
+            Padding="20,20,20,20">
+            <Button                
+                Text="Entrar"
+                TextColor="#2c3e50"
+                BackgroundColor="White" 
+                BorderColor="#2c3e50" 
+                BorderWidth="1" 
+                BorderRadius = "20"   
+                FontSize="Small"
+                Clicked="BtnEntrar_Clicked"
+                HeightRequest="40"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

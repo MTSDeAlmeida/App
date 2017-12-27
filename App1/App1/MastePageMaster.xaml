@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="App1.MastePageMaster"
+             Title="Menu"
+             BackgroundColor="#e8e8e8">
+  <StackLayout
+                Orientation="Vertical" 
+                WidthRequest="100">
+        <StackLayout
+                    VerticalOptions="Center"
+                    BackgroundColor="#2c3e50"
+                    Padding="10,10,10,10">
+            <controls:CircleImage  Source="logo_escola.png" 
+                                   Aspect="AspectFill"
+                                   HorizontalOptions = "Start">
+                <controls:CircleImage.WidthRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">60</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.WidthRequest>
+                <controls:CircleImage.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android, iOS">60</On>
+                        <On Platform="WinPhone">75</On>
+                    </OnPlatform>
+                </controls:CircleImage.HeightRequest>
+            </controls:CircleImage>
+            <Label
+                    TextColor = "#FEFEFE"
+                    FontAttributes = "Bold"
+                    Text = "MTS"/>
+            <Label
+                    TextColor = "#FEFEFE"
+                    FontAttributes = "Bold"
+                    Text = "alexandre@matheussolucoes.com.br"/>
+        </StackLayout>
+        <ListView x:Name="MenuItemsListView"          
+            HasUnevenRows="true"
+            ItemsSource="{Binding MenuItems}"
+            WidthRequest="100">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10,10" 
+                             HorizontalOptions="FillAndExpand">
+                            <Label VerticalOptions="FillAndExpand" 
+                        VerticalTextAlignment="Center" 
+                        Text="{Binding Title}" 
+                        TextColor ="{Binding TitleColor}"
+                        FontAttributes = "Bold"
+                        FontSize="Small"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>        
+        </ListView>
+  </StackLayout>
+</ContentPage>
