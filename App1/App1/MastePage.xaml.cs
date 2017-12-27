@@ -16,22 +16,31 @@ namespace App1
         public MastePage()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
             NavigationPage.SetHasNavigationBar(this, false);
+            MasterPage.ListView.ItemSelected += ListView_ItemSelected;           
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MastePageMenuItem;
+
             if (item == null)
                 return;
-           
-            Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType)) {
+
+            if (item.TargetType != null)
+            {
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType))
+                {
                     BarBackgroundColor = Color.FromHex("2c3e50"),
                     Title = item.Title
-            };
+                };
+            }
+            else
+            {
+                await Navigation.PopAsync(true);
+            }
 
-            IsPresented = false;            
+            IsPresented = false;
             MasterPage.ListView.SelectedItem = null;
         }
     }

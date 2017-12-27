@@ -15,7 +15,8 @@ namespace App1
 		public LoginPage ()
 		{
 			InitializeComponent ();
-		}
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
 
         private async void BtnEntrar_Clicked(object sender, EventArgs e)
         {
@@ -31,10 +32,10 @@ namespace App1
 
             if ((EntryLogin.Text != string.Empty) && (EntrySenha.Text == "1"))
             {
-                //EntrySenha.Text = string.Empty;
-               // EntryLogin.Text = string.Empty;
+                EntrySenha.Text = string.Empty;
+                EntryLogin.Text = string.Empty;
 
-                await Navigation.PushAsync(new App1.MastePage() { Title = "#CLASS"});
+                await Navigation.PushAsync(new App1.MastePage(),true);
             }
         }
     }
