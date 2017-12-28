@@ -40,7 +40,8 @@
                     x:Name="EntryLogin"
                     BackgroundColor="White"
                     TextColor="#2c3e50"
-                    FontSize="Small"/>
+                    FontSize="Small"
+                    HeightRequest="40"/>
         </StackLayout>
         <StackLayout>
             <Label 
@@ -55,7 +56,8 @@
                     IsPassword="True"    
                     BackgroundColor="White"
                     TextColor="#2c3e50"
-                    FontSize="Small">
+                    FontSize="Small"
+                    HeightRequest="40">
                 <Entry.Effects>
                     <ef:ShowHidePassEffect/>
                 </Entry.Effects>
