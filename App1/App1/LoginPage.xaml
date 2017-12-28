@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
-             xmlns:ef="clr-namespace:App1.Droid.Effects" 
+             xmlns:Effects="clr-namespace:App1.Droid.Effects" 
+             xmlns:behaviors="clr-namespace:App1.Droid.Behavior"
              x:Class="App1.LoginPage"
              Title="#CLASS"
              Padding="10,20,10,50">
@@ -41,7 +42,11 @@
                     BackgroundColor="White"
                     TextColor="#2c3e50"
                     FontSize="Small"
-                    HeightRequest="40"/>
+                    HeightRequest="40">
+                <Entry.Behaviors>
+                    <behaviors:EntryLengthValidatorBehavior MaxLength="5" />
+                </Entry.Behaviors>
+            </Entry>
         </StackLayout>
         <StackLayout>
             <Label 
@@ -59,8 +64,11 @@
                     FontSize="Small"
                     HeightRequest="40">
                 <Entry.Effects>
-                    <ef:ShowHidePassEffect/>
+                    <Effects:ShowHidePassEffect/>
                 </Entry.Effects>
+                <Entry.Behaviors>
+                    <behaviors:EntryLengthValidatorBehavior MaxLength="5" />
+                </Entry.Behaviors>
             </Entry>
         </StackLayout>
         <StackLayout

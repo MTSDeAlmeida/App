@@ -32,7 +32,7 @@ namespace App1
 
             if ((EntryLogin.Text != string.Empty) && (EntrySenha.Text == "1"))
             {
-               await Navigation.PushAsync(new App1.MastePage(),true);
+                await Navigation.PushAsync(new App1.MastePage(),true);
                 EntrySenha.Text = string.Empty;
                 EntryLogin.Text = string.Empty;
             }

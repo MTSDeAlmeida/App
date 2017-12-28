@@ -36,11 +36,8 @@ namespace App1
                     new MastePageMenuItem { Id = 0, Title = "Cadastro de Aluno",TitleColor=Color.FromHex("454545"),BarBackgroundColor=Color.FromHex("454545"),TitleWeight=FontAttributes.Bold, TargetType = typeof(Views.Cadastros.CadastroAlunoView) },
                     new MastePageMenuItem { Id = 1, Title = "Ficha do Aluno",TitleColor=Color.FromHex("454545"),TitleWeight=FontAttributes.Bold,TargetType = typeof(Views.Report.FichaAluno) },
                     new MastePageMenuItem { Id = 2, Title = "Contatos",TitleColor=Color.FromHex("454545"),TitleWeight=FontAttributes.Bold,TargetType = typeof(Views.ContatoView) },
+                    new MastePageMenuItem { Id = 2, Title = "Play Video",TitleColor=Color.FromHex("454545"),TitleWeight=FontAttributes.Bold,TargetType = typeof(Views.PlayVideoView) },
                     new MastePageMenuItem { Id = 3, Title = "Sair",TitleColor=Color.FromHex("454545"),TitleWeight=FontAttributes.Bold,TargetType = null }                 
-                    // new MastePageMenuItem { Id = 1, Title = "Page 2" },
-                 //   new MastePageMenuItem { Id = 2, Title = "Page 3" },
-                  //  new MastePageMenuItem { Id = 3, Title = "Page 4" },
-                  //  new MastePageMenuItem { Id = 4, Title = "Page 5" },
                 });
             }
             

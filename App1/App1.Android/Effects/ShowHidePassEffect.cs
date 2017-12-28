@@ -33,7 +33,7 @@ namespace App1.Droid.Effects
         {
             EditText editText = ((EditText)Control);
             editText.SetCompoundDrawablesRelativeWithIntrinsicBounds
-                                  (0, 0, Resource.Drawable.ShowPass, 0);
+                                  (0, 0, Resource.Drawable.ShowPass_2, 0);
             editText.SetOnTouchListener(new OnDrawableTouchListener());
         }
 
@@ -50,13 +50,13 @@ namespace App1.Droid.Effects
                         {
                             editText.TransformationMethod = PasswordTransformationMethod.Instance;
                             editText.SetCompoundDrawablesRelativeWithIntrinsicBounds
-                                               (0, 0, Resource.Drawable.ShowPass, 0);
+                                               (0, 0, Resource.Drawable.ShowPass_2, 0);
                         }
                         else
                         {
                             editText.TransformationMethod = null;
                             editText.SetCompoundDrawablesRelativeWithIntrinsicBounds
-                                               (0, 0, Resource.Drawable.HidePass, 0);
+                                               (0, 0, Resource.Drawable.HidePass_2, 0);
                         }
 
                         return true;
