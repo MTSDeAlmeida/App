@@ -3345,15 +3345,24 @@ namespace App1.Droid
 			// aapt resource value: 0x7f08001f
 			public const int wrap_content = 2131230751;
 			
-			static Id()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Id()
-			{
-			}
-		}
+			// aapt resource value: 0x7f050002
+            public const int PlayVideoButton = 2131034114;
+
+            // aapt resource value: 0x7f050000
+            public const int RelativeLayout = 2131034112;
+
+            // aapt resource value: 0x7f050001
+            public const int SampleVideoView = 2131034113;
+
+            static Id()
+            {
+                global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+            }
+
+            private Id()
+            {
+            }
+        }
 		
 		public partial class Integer
 		{
@@ -3425,9 +3434,11 @@ namespace App1.Droid
 		
 		public partial class Layout
 		{
-			
-			// aapt resource value: 0x7f030000
-			public const int abc_action_bar_title_item = 2130903040;
+            // aapt resource value: 0x7f030000
+            public const int Main = 2130903040;           
+
+            // aapt resource value: 0x7f030000
+            public const int abc_action_bar_title_item = 2130903040;
 			
 			// aapt resource value: 0x7f030001
 			public const int abc_action_bar_up_container = 2130903041;
@@ -3629,16 +3640,16 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f030043
 			public const int Toolbar = 2130903107;
-			
-			static Layout()
-			{
-				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
-			}
-			
-			private Layout()
-			{
-			}
-		}
+
+            static Layout()
+            {
+                global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+            }
+
+            private Layout()
+            {
+            }
+        }
 		
 		public partial class String
 		{
