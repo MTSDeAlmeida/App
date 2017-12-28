@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:ef="clr-namespace:App1.Droid.Effects" 
              x:Class="App1.LoginPage"
              Title="#CLASS"
              Padding="10,20,10,50">
@@ -54,7 +55,11 @@
                     IsPassword="True"    
                     BackgroundColor="White"
                     TextColor="#2c3e50"
-                    FontSize="Small"/>
+                    FontSize="Small">
+                <Entry.Effects>
+                    <ef:ShowHidePassEffect />
+                </Entry.Effects>
+            </Entry>
         </StackLayout>
         <StackLayout
             Padding="20,20,20,20">
