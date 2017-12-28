@@ -57,7 +57,7 @@
                     TextColor="#2c3e50"
                     FontSize="Small">
                 <Entry.Effects>
-                    <ef:ShowHidePassEffect />
+                    <ef:ShowHidePassEffect/>
                 </Entry.Effects>
             </Entry>
         </StackLayout>
