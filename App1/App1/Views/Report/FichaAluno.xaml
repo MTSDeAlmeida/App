@@ -4,7 +4,7 @@
              x:Class="App1.Views.Report.FichaAluno"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              Title="Ficha do Aluno"
-             Padding="10,10,10,50">
+             Padding="10,10,10,10">
     <StackLayout
                     Margin="10,10,10,50"
                     VerticalOptions="Start">

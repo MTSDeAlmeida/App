@@ -12,7 +12,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IAddressBookInformation.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IContacts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -34,6 +39,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MenuItems\MasterPageItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\Cadastros\AlunoModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Contacts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\ContatoModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AgendaView.xaml.cs">
       <DependentUpon>AgendaView.xaml</DependentUpon>
@@ -57,6 +63,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Report\FichaAluno.xaml.cs">
       <DependentUpon>FichaAluno.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\VideoPlayEmbed.xaml.cs">
+      <DependentUpon>VideoPlayEmbed.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -122,6 +132,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\PlayVideoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)LandingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\VideoPlayEmbed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

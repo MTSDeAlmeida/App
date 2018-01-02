@@ -152,15 +152,13 @@
   <ItemGroup>
     <Compile Include="Behavior\EntryLengthValidatorBehavior .cs" />
     <Compile Include="Effects\ShowHidePassEffect.cs" />
+    <Compile Include="Implements\AddressBookInformation.cs" />
     <Compile Include="Implements\Contacts.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Renderer\rButtonRenderer.cs" />
     <Compile Include="Renderer\rEntryRenderer.cs" />
     <Compile Include="Renderer\rVideoPlayerRenderer.cs" />
-    <Compile Include="Resources\layout\Main.xaml.cs">
-      <DependentUpon>Main.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\StatusBarHelper.cs" />
@@ -169,6 +167,12 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout-land\Main.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />
@@ -226,11 +230,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\HidePass_2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\layout\Main.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\App1\App1.projitems" Label="Shared" Condition="Exists('..\App1\App1.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

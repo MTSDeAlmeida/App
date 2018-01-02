@@ -17,31 +17,40 @@ namespace App1.Droid.Implements
 {
     public class Contacts : App1.Interfaces.IContacts
     {
-        public Contacts() { }
-
+        private AddressBook book = null;
+        public Contacts() {
+            this.book = new AddressBook(Forms.Context.ApplicationContext);
+        }
 
         public async Task<List<Model.ContatoModel>> BuscaContato()
-        {       
-            List<Model.ContatoModel> ct = new List<Model.ContatoModel>();
-            var book = new AddressBook(Forms.Context);
-            if (true)
+        {
+            var contacts = new List<ContatoModel>();
+            // var permissionResult = await this.book.RequestPermission();
+            var permissionResult = true;
+            if (permissionResult)
             {
+                if (!this.book.Any())
+                {
+                    Console.WriteLine("No contacts found");
+                }
+
                 foreach (Contact contact in book.OrderBy(c => c.LastName))
                 {
-                    ct.Add(new Model.ContatoModel()
-                    {
-                        Nome = contact.DisplayName,
-                        Fone = contact.Phones.Any() ? contact.Phones.FirstOrDefault().Number : ""
-                    });
+                    // Note: on certain android device(Htc for example) it show name in DisplayName Field
+                    contacts.Add(new ContatoModel() { Nome = contact.FirstName });
                 }
-            }          
+            }
 
-            return ct;
+            return contacts;
+         
         }
+
 
         List<ContatoModel> Interfaces.IContacts.BuscaContato()
         {
-            return new List<Model.ContatoModel>{
+             
+
+                return new List<Model.ContatoModel>{
                 new ContatoModel(){Nome="Arthur",Fone="+55 (31) 1111-1111"},
                 new ContatoModel(){Nome="Daniel",Fone="+55 (31) 2222-2222"},
                 new ContatoModel(){Nome="Micaella",Fone="+55 (31) 3333-3333"},

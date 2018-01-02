@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/RelativeLayout"
     android:orientation="vertical"
@@ -11,6 +11,8 @@
     <Button
         android:id="@+id/PlayVideoButton"
         android:text="Play Video"
+        android:background="#ffffff"
+        android:textColor="#2c3e50"
         android:layout_width="wrap_content"
         android:layout_height="match_parent" />
 </LinearLayout>

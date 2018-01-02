@@ -44,9 +44,11 @@ namespace App1.Droid.Renderer
             playButton = FindViewById<Android.Widget.Button>(Resource.Id.PlayVideoButton);
 
             //Give some color to the play button, but not important
-            playButton.SetBackgroundColor(Android.Graphics.Color.Aqua);
+            playButton.SetBackgroundColor(Android.Graphics.Color.White);
+            playButton.SetTextColor(Android.Graphics.Color.Black);
+            
             //uri for a free video
-            var uri = Android.Net.Uri.Parse("https://www.dropbox.com/s/hi45psyy0wq9560/PigsInAPolka1943.mp4?dl=1");
+            var uri = Android.Net.Uri.Parse("http://vjs.zencdn.net/v/oceans.mp4");
             //Set the videoView with our uri, this could also be a local video on device
             videoView.SetVideoURI(uri);
             //Assign click event on our play button to play the video
@@ -91,13 +93,13 @@ namespace App1.Droid.Renderer
             {
                 StatusBarHelper.DecorView.SystemUiVisibility = StatusBarVisibility.Hidden;
                 //If you have an ActionBar, uncomment the line below
-                //StatusBarHelper.AppActionBar.Hide ();
+                StatusBarHelper.AppActionBar.Hide ();
             }
             else
             {
                 StatusBarHelper.DecorView.SystemUiVisibility = StatusBarVisibility.Visible;
                 //If you have an ActionBar, uncomment the line below
-                //StatusBarHelper.AppActionBar.Show ();
+                StatusBarHelper.AppActionBar.Show ();
             }
         }
 
