@@ -19,14 +19,15 @@ namespace App1.Droid.Implements
 
    // using Xamarin.Contacts;
     using Xamarin.Forms;
+    using Android.Content;
 
     public class AddressBookInformation : IAddressBookInformation
     {
         private AddressBook book = null;
 
-        public AddressBookInformation()
+        public AddressBookInformation(Context context)
         {
-            this.book = new AddressBook(Forms.Context.ApplicationContext);
+            this.book = new AddressBook(context);
         }
 
 

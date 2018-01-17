@@ -6,11 +6,13 @@ using App1.Model;
 using System.Threading.Tasks;
 using Plugin.Contacts;
 using Plugin.Permissions;
-using Xamarin.Forms;
+
 using static Android.Manifest;
 using Plugin.Permissions.Abstractions;
 using Plugin.Contacts.Abstractions;
 using App1.Interfaces;
+using Xamarin.Forms;
+using Android.Content;
 
 [assembly: Xamarin.Forms.Dependency(typeof(App1.Droid.Implements.Contacts))]
 namespace App1.Droid.Implements
@@ -18,13 +20,14 @@ namespace App1.Droid.Implements
     public class Contacts : App1.Interfaces.IContacts
     {
         private AddressBook book = null;
-        public Contacts() {
-            this.book = new AddressBook(Forms.Context.ApplicationContext);
+        public Contacts(Context context) {
+
+            this.book = new AddressBook(context);
         }
 
-        public async Task<List<Model.ContatoModel>> BuscaContato()
+       /* public  async Task<List<Model.ContatoModel>> BuscaContatos()
         {
-            var contacts = new List<ContatoModel>();
+            var contacts =   new List<ContatoModel>();
             // var permissionResult = await this.book.RequestPermission();
             var permissionResult = true;
             if (permissionResult)
@@ -37,19 +40,17 @@ namespace App1.Droid.Implements
                 foreach (Contact contact in book.OrderBy(c => c.LastName))
                 {
                     // Note: on certain android device(Htc for example) it show name in DisplayName Field
-                    contacts.Add(new ContatoModel() { Nome = contact.FirstName });
+                     contacts.Add(new ContatoModel() { Nome = contact.FirstName });
                 }
             }
 
-            return contacts;
+            return  contacts;
          
-        }
+        }*/
 
 
         List<ContatoModel> Interfaces.IContacts.BuscaContato()
         {
-             
-
                 return new List<Model.ContatoModel>{
                 new ContatoModel(){Nome="Arthur",Fone="+55 (31) 1111-1111"},
                 new ContatoModel(){Nome="Daniel",Fone="+55 (31) 2222-2222"},
