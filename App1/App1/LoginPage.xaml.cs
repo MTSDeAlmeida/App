@@ -9,14 +9,16 @@ using Xamarin.Forms.Xaml;
 
 namespace App1
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
-		public LoginPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
+    {
+        public LoginPage()
+        {
+            InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
+            EntrySenha.TextChanged += EntrySenha_TextChanged;
         }
+
 
         private async void BtnEntrar_Clicked(object sender, EventArgs e)
         {
@@ -32,9 +34,17 @@ namespace App1
 
             if ((EntryLogin.Text != string.Empty) && (EntrySenha.Text == "1"))
             {
-                await Navigation.PushAsync(new App1.MastePage(),true);
+                await Navigation.PushAsync(new App1.MastePage(), true);
                 EntrySenha.Text = string.Empty;
                 EntryLogin.Text = string.Empty;
+            }
+        }
+
+        private void EntrySenha_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (e.NewTextValue.Length < 5)
+            {
+                EntrySenha.Text = e.NewTextValue;
             }
         }
     }

@@ -3,12 +3,16 @@ using Android.Widget;
 using System;
 using Xamarin.Forms.Platform.Android;
 using Xamarin.Forms;
+using Android.Content;
 
 [assembly: ExportRenderer(typeof(Entry), typeof(App1.Droid.Renderer.rEntryRenderer))]
 namespace App1.Droid.Renderer
 {
     public class rEntryRenderer : EntryRenderer
     {
+        public rEntryRenderer(Context context) : base(context)
+        {
+        }
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);

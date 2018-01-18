@@ -18,6 +18,9 @@ namespace App1.Droid.Renderer
 {
     public class rVideoPlayerRenderer : ViewRenderer
     {
+        public rVideoPlayerRenderer(Context context) : base(context)
+        {
+        }
         //Create views globally so they can be referenced in OnLayout override
         VideoView videoView;
         Android.Widget.Button playButton;
